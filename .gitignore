@@ -1,0 +1,8 @@
+target/
+.settings/
+.svn/
+.classpath
+.project
+*~
+Thumbs.db
+*.log
