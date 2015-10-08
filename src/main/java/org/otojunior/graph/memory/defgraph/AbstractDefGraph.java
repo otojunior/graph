@@ -3,10 +3,15 @@ package org.otojunior.graph.memory.defgraph;
 import org.otojunior.graph.memory.AbstractMemoryGraph;
 
 /**
- * @author Oto
- *
+ * Abstract Class of non diractional graphs.
+ * @author Oto Junior
  */
 public abstract class AbstractDefGraph<V, E> extends AbstractMemoryGraph<V, E> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8267131727405133720L;
+
 	/**
 	 * {@inheritDoc}
 	 */

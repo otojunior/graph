@@ -11,7 +11,7 @@ import org.apache.commons.dbutils.ResultSetHandler;
 
 /**
  * Vertex collection handler for use in Databases graphs.
- * @author Oto
+ * @author Oto Junior
  *
  * @param <V> Vertex
  */

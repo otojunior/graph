@@ -1,6 +1,5 @@
 package org.otojunior.graph.memory.defgraph.impl;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,9 +7,14 @@ import org.otojunior.graph.memory.defgraph.AbstractDefGraph;
 
 /**
  * Hash Non-Directinal Graph.
- * @author Oto
+ * @author Oto Junior
  */
 public class HashDefGraph<V, E> extends AbstractDefGraph<V, E> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -140928490459208185L;
+
 	/**
 	 * {@inheritDoc}
 	 */

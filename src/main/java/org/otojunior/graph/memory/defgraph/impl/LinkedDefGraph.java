@@ -1,17 +1,20 @@
 package org.otojunior.graph.memory.defgraph.impl;
 
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.otojunior.graph.memory.defgraph.AbstractDefGraph;
 
-
 /**
  * Linked Non-Directinal Graph.
- * @author Oto
+ * @author Oto Junior
  */
 public class LinkedDefGraph<V, E> extends AbstractDefGraph<V, E> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7051324677952115606L;
+
 	/**
 	 * {@inheritDoc}
 	 */

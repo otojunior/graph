@@ -1,6 +1,5 @@
 package org.otojunior.graph.memory.digraph.impl;
 
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -8,10 +7,15 @@ import org.otojunior.graph.memory.digraph.AbstractDigraph;
 
 /**
  * Linked Directional Graph.
- * @author Oto
+ * @author Oto Junior
  */
 public class LinkedDigraph<V, E> extends
 		AbstractDigraph<V, E> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4502519357499061929L;
+
 	/**
 	 * {@inheritDoc}
 	 */

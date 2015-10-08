@@ -13,9 +13,14 @@ import org.otojunior.graph.SimpleEdgeEntry;
 
 /**
  * Abstract Class of graphs.
- * @author Oto
+ * @author Oto Junior
  */
 public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6310174772197171090L;
+	
 	/**
 	 * The data structure to be used.
 	 */

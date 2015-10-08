@@ -1,6 +1,5 @@
 package org.otojunior.graph.memory.digraph.impl;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,10 +7,15 @@ import org.otojunior.graph.memory.digraph.AbstractDigraph;
 
 /**
  * Hash Directional Graph.
- * @author Oto
+ * @author Oto Junior
  */
 public class HashDigraph<V, E> extends
 		AbstractDigraph<V, E> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3091980736765347603L;
+
 	/**
 	 * {@inheritDoc}
 	 */

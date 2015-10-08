@@ -1,5 +1,10 @@
 package org.otojunior.graph.util.sql;
 
+/**
+ * 
+ * @author Oto Junior
+ *
+ */
 public class Sql {
 	public static final String HSQLDB_DRIVER = "org.hsqldb.jdbc.JDBCDriver";
 	public static final String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
