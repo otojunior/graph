@@ -3,7 +3,7 @@ package org.otojunior.graph;
 /**
  * Internal class that represents a Edge with the origin and destiny 
  * vertexes. 
- * @author Oto
+ * @author Oto Junior
  */
 public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 	private static final long serialVersionUID = 8749235506878058451L;
@@ -36,21 +36,21 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 	}
 	
 	/**
-	 * 
+	 * {@inheritDoc}
 	 */
 	public E getEdge() {
 		return this.edge;
 	}
 	
 	/**
-	 * 
+	 * {@inheritDoc}
 	 */
 	public V getVi() {
 		return this.vi;
 	}
 	
 	/**
-	 * 
+	 * {@inheritDoc}
 	 */
 	public V getVj() {
 		return this.vj;
@@ -70,7 +70,7 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 	}
 
 	/**
-	 * 
+	 * {@inheritDoc}
 	 */
 	public E setEdge(E newValue) {
 		E oldValue = this.edge;

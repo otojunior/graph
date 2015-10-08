@@ -13,14 +13,14 @@ import org.otojunior.graph.SimpleEdgeEntry;
 
 /**
  * Edge collection handler for use in Databases graphs.
- * @author Oto
+ * @author Oto Junior
  *
  * @param <V> Vertex
- * @param <E> edge
+ * @param <E> Edge
  */
 public class FilteredEdgeCollectionHandler<V,E> implements ResultSetHandler<Collection<EdgeEntry<V, E>>> {
 	/**
-	 * Handles the ResultSet. 
+	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
 	public Collection<EdgeEntry<V, E>> handle(ResultSet rs) throws SQLException {
@@ -36,6 +36,11 @@ public class FilteredEdgeCollectionHandler<V,E> implements ResultSetHandler<Coll
 		return Collections.unmodifiableCollection(edges);
 	}
 	
+	/**
+	 * Convert array to Collection.
+	 * @param array Array to convert.
+	 * @return 
+	 */
 	@SuppressWarnings("unchecked")
 	private V toCollection(Array array) {
 		try {

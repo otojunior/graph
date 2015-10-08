@@ -12,14 +12,14 @@ import org.otojunior.graph.SimpleEdgeEntry;
 
 /**
  * Edge collection handler for use in Databases graphs.
- * @author Oto
+ * @author Oto Junior
  *
- * @param <V> Vertex
- * @param <E> edge
+ * @param <V> Vertex.
+ * @param <E> Edge.
  */
 public class EdgeCollectionHandler<V,E> implements ResultSetHandler<Collection<EdgeEntry<V, E>>> {
 	/**
-	 * Handles the ResultSet. 
+	 * {@inheritDo} 
 	 */
 	@SuppressWarnings("unchecked")
 	public Collection<EdgeEntry<V, E>> handle(ResultSet rs) throws SQLException {

@@ -1,21 +1,20 @@
-package graph.database.defgraph.impl;
+package org.otojunior.graph.database.defgraph.impl;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import graph.DefGraphsTestCase;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 
 import org.junit.Test;
+import org.otojunior.graph.DefGraphsTestCase;
 
 public class HSQLCollecDefGraphTest extends DefGraphsTestCase<Collection<String>> {
 	@Override
 	public void setUp() throws Exception {
 		graph = new HSQLCollecDefGraph<String, Integer>(
-				"jdbc:hsqldb:mem:mymemdb;sql.unique_nulls=false", "SA", "",
-				"VARCHAR(3) ARRAY", "INTEGER");
+				"jdbc:hsqldb:mem:mymemdb;sql.unique_nulls=false", "SA", "" /*,"VARCHAR(3) ARRAY", "INTEGER"*/);
 	}
 	
 	@Test

@@ -1,15 +1,15 @@
-package graph.database.digraph.impl;
+package org.otojunior.graph.database.digraph.impl;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import graph.DigraphsTestCase;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 
 import org.junit.Test;
+import org.otojunior.graph.DigraphsTestCase;
 
 public class HSQLCollecDigraphTest extends DigraphsTestCase<Collection<String>> {
 	@Override

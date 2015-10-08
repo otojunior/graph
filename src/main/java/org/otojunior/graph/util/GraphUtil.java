@@ -7,7 +7,7 @@ import org.otojunior.graph.Graph;
 
 /**
  * Graphic Utilities.
- * @author Oto
+ * @author Oto Junior
  */
 public class GraphUtil {
 	/**

@@ -1,13 +1,13 @@
-package graph.util;
+package org.otojunior.graph.util;
 
 import static org.junit.Assert.assertEquals;
-import graph.EdgeEntry;
-import graph.Graph;
-import graph.memory.digraph.impl.HashDigraph;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.otojunior.graph.EdgeEntry;
+import org.otojunior.graph.Graph;
+import org.otojunior.graph.memory.digraph.impl.HashDigraph;
 
 public class GraphUtilTest {
 	private Graph<String, Integer> graph;
