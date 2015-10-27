@@ -6,6 +6,12 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+/**
+ * Non Directional Test Case.
+ * @author Oto Junior
+ *
+ * @param <V> Vertex.
+ */
 public abstract class DefGraphsTestCase<V> extends DigraphsTestCase<V> {
 	/**
 	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#addEdge(java.lang.Object, java.lang.Object, java.lang.Object)}.

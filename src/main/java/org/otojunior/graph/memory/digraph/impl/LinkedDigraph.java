@@ -9,8 +9,7 @@ import org.otojunior.graph.memory.digraph.AbstractDigraph;
  * Linked Directional Graph.
  * @author Oto Junior
  */
-public class LinkedDigraph<V, E> extends
-		AbstractDigraph<V, E> {
+public class LinkedDigraph<V, E> extends AbstractDigraph<V, E> {
 	/**
 	 * 
 	 */

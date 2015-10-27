@@ -9,8 +9,7 @@ import org.otojunior.graph.memory.digraph.AbstractDigraph;
  * Hash Directional Graph.
  * @author Oto Junior
  */
-public class HashDigraph<V, E> extends
-		AbstractDigraph<V, E> {
+public class HashDigraph<V, E> extends AbstractDigraph<V, E> {
 	/**
 	 * 
 	 */

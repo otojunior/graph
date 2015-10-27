@@ -11,6 +11,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Digraphs Test Case.
+ * @author Oto Junior
+ *
+ * @param <V> Vertex.
+ */
 public abstract class DigraphsTestCase<V> {
 	protected Graph<V, Integer> graph;
 
@@ -23,7 +29,7 @@ public abstract class DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#addVertex(java.lang.Object)}.
+	 * Test method addVertex().
 	 */
 	@Test
 	public void testAddVertex() {
@@ -35,7 +41,7 @@ public abstract class DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#addVertex(java.lang.Object)}.
+	 * Test method addRepeatedVertex().
 	 */
 	@Test
 	public void testAddRepeatedVertex() {
@@ -48,7 +54,7 @@ public abstract class DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#removeVertex(java.lang.Object)}.
+	 * Test method removeVertex().
 	 */
 	@Test
 	public void testRemoveVertex() {
@@ -61,7 +67,7 @@ public abstract class DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#addEdge(java.lang.Object, java.lang.Object, java.lang.Object)}.
+	 * Test method addEdge()
 	 */
 	@Test
 	public void testAddEdge() {
@@ -74,7 +80,7 @@ public abstract class DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#addEdge(java.lang.Object, java.lang.Object, java.lang.Object)}.
+	 * Test method repeatedEdge().
 	 */
 	@Test
 	public void testRepeatedEdge() {
@@ -89,7 +95,7 @@ public abstract class DigraphsTestCase<V> {
 	
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#getEdge(java.lang.Object, java.lang.Object)}.
+	 * Test method getEdge()
 	 */
 	@Test
 	public void testGetEdge() {
@@ -180,6 +186,9 @@ public abstract class DigraphsTestCase<V> {
 		assertFalse(graph.hasEdge(toV("D"), toV("B")));
 	}
 	
+	/**
+	 * Test method for {@link }
+	 */
 	@Test
 	public void testIterator() {
 		graph.addEdge(toV("A"),toV("B"),2);

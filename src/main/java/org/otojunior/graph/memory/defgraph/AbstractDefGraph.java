@@ -3,7 +3,7 @@ package org.otojunior.graph.memory.defgraph;
 import org.otojunior.graph.memory.AbstractMemoryGraph;
 
 /**
- * Abstract Class of non diractional graphs.
+ * Abstract Class of non directional graphs.
  * @author Oto Junior
  */
 public abstract class AbstractDefGraph<V, E> extends AbstractMemoryGraph<V, E> {
