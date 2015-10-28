@@ -1,18 +1,20 @@
-package org.otojunior.graph.memory.defgraph.impl;
+package org.otojunior.graph.memory.defgraph;
 
 import org.otojunior.graph.DefGraphsTestCase;
+import org.otojunior.graph.memory.defgraph.HashDefGraph;
 
 /**
- * Linked Defgraphs Test.
+ * Hash defgraphs test.
  * @author Oto Junior
+ *
  */
-public class LinkedDefGraphTest extends DefGraphsTestCase<String> {
+public class HashDefGraphTest extends DefGraphsTestCase<String> {
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void setUp() throws Exception {
-		graph = new LinkedDefGraph<>();
+		graph = new HashDefGraph<>();
 	}
 
 	/**

@@ -1,9 +1,7 @@
-package org.otojunior.graph.memory.digraph.impl;
+package org.otojunior.graph.memory.digraph;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import org.otojunior.graph.memory.digraph.AbstractDigraph;
 
 /**
  * Hash Directional Graph.

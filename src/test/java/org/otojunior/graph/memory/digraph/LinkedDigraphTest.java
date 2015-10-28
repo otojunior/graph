@@ -1,18 +1,19 @@
-package org.otojunior.graph.memory.digraph.impl;
+package org.otojunior.graph.memory.digraph;
 
 import org.otojunior.graph.DigraphsTestCase;
+import org.otojunior.graph.memory.digraph.LinkedDigraph;
 
 /**
- * Hash Digraph test.
+ * Linked Digraphs Test Case.
  * @author Oto Junior
  */
-public class HashDigraphTest extends DigraphsTestCase<String> {
+public class LinkedDigraphTest extends DigraphsTestCase<String> {
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void setUp() throws Exception {
-		graph = new HashDigraph<>();
+		graph = new LinkedDigraph<>();
 	}
 
 	/**

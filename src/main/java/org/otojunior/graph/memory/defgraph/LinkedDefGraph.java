@@ -1,9 +1,7 @@
-package org.otojunior.graph.memory.defgraph.impl;
+package org.otojunior.graph.memory.defgraph;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import org.otojunior.graph.memory.defgraph.AbstractDefGraph;
 
 /**
  * Linked Non-Directinal Graph.

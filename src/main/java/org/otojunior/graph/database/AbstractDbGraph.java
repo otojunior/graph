@@ -21,6 +21,11 @@ import org.otojunior.graph.util.sql.Sql;
  * @author Oto
  */
 public abstract class AbstractDbGraph<V, E> implements Graph<V, E> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 400935963846106462L;
+	
 	protected String tableName; 
 	protected Connection conn;
 	protected QueryRunner run;
@@ -36,8 +41,7 @@ public abstract class AbstractDbGraph<V, E> implements Graph<V, E> {
 	 * @param user User
 	 * @param password Password
 	 */
-	public AbstractDbGraph(String driver, String url, String user,
-			String password) {
+	public AbstractDbGraph(String driver, String url, String user, String password) {
 		try {
 			Class.forName(driver);
 			this.conn = DriverManager.getConnection(url, user, password);

@@ -1,6 +1,6 @@
 package org.otojunior.graph.reference;
 
-import org.otojunior.graph.memory.defgraph.impl.HashDefGraph;
+import org.otojunior.graph.memory.defgraph.HashDefGraph;
 
 /**
  * Default Graph with integer vertexes and double value edges.
@@ -9,7 +9,7 @@ import org.otojunior.graph.memory.defgraph.impl.HashDefGraph;
  * @param <V> Vertexes.
  * @param <E> Edges.
  */
-public class DefaultIntegerGraph extends HashDefGraph<Integer, Double> {
+public class DefaultIntegerDefGraph extends HashDefGraph<Integer, Double> {
 	/**
 	 * 
 	 */

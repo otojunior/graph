@@ -1,14 +1,11 @@
 package org.otojunior.graph.util.sql;
 
 /**
- * 
+ * SQL to manipulate database graphs.
  * @author Oto Junior
  *
  */
 public class Sql {
-	public static final String HSQLDB_DRIVER = "org.hsqldb.jdbc.JDBCDriver";
-	public static final String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
-	
 	public final String INSERT_VERTEX;
 	public final String DELETE_VERTEX;
 	public final String SELECT_VERTEX;

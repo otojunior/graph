@@ -11,14 +11,18 @@ import org.otojunior.graph.database.AbstractDbGraph;
  */
 public abstract class AbstractDbDefGraph<V, E> extends AbstractDbGraph<V, E> {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3417071306191229349L;
+
+	/**
 	 * Default constructor.
 	 * @param driver
 	 * @param url
 	 * @param user
 	 * @param password
 	 */
-	public AbstractDbDefGraph(String driver, String url, String user,
-			String password) {
+	public AbstractDbDefGraph(String driver, String url, String user, String password) {
 		super(driver, url, user, password);
 	}
 
