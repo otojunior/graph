@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 import org.junit.After;
 import org.junit.Before;
@@ -199,6 +200,23 @@ public abstract class DigraphsTestCase<V> {
 		for (@SuppressWarnings("unused") EdgeEntry<V, Integer> edge : graph)
 			count++;
 		assertEquals(4, count);
+	}
+	
+	/**
+	 * Test method iterator() removing one element.
+	 */
+	@Test
+	public void testIteratorRemovingElement() {
+		graph.addEdge(toV("A"),toV("B"),2);
+		graph.addEdge(toV("B"),toV("A"),9);
+		graph.addEdge(toV("B"),toV("C"),4);
+		graph.addEdge(toV("B"),toV("D"),8);
+		Iterator<EdgeEntry<V, Integer>> it = graph.iterator();
+		while (it.hasNext()) {
+			it.next();
+			it.remove();
+		}
+		assertEquals(0, graph.getEdgeCollection().size());
 	}
 	
 	protected abstract V toV(String v);

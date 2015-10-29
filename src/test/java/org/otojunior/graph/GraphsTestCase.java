@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Iterator;
+
 import org.junit.Test;
 
 /**
@@ -14,7 +16,7 @@ import org.junit.Test;
  */
 public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#addEdge(java.lang.Object, java.lang.Object, java.lang.Object)}.
+	 * Test method addEdge().
 	 */
 	@Override
 	@Test
@@ -28,7 +30,7 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#addEdge(java.lang.Object, java.lang.Object, java.lang.Object)}.
+	 * Test method addEdge() for a repeated edge.
 	 */
 	@Test
 	public void testRepeatedEdge() {
@@ -42,7 +44,7 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#getEdge(java.lang.Object, java.lang.Object)}.
+	 * Test method getEdge().
 	 */
 	@Test
 	public void testGetEdge() {
@@ -56,7 +58,7 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 	}
 
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#getEdgeCollection()}.
+	 * Test method getEdgeCollection().
 	 */
 	@Test
 	public void testGetEdgeCollection() {
@@ -69,7 +71,7 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.LinkedDigraph#hasEdge()}.
+	 * Test method hasEdge().
 	 */
 	@Test
 	public void testHasEdge() {
@@ -82,6 +84,9 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 		assertTrue(graph.hasEdge(toV("D"), toV("B")));
 	}
 	
+	/**
+	 * Test method iterator().
+	 */
 	@Test
 	public void testIterator() {
 		graph.addEdge(toV("A"),toV("B"),2);
@@ -92,5 +97,22 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 		for (@SuppressWarnings("unused") EdgeEntry<V, Integer> edge : graph)
 			count++;
 		assertEquals(3, count);
+	}
+	
+	/**
+	 * Test method iterator() removing one element.
+	 */
+	@Test
+	public void testIteratorRemovingElement() {
+		graph.addEdge(toV("A"),toV("B"),2);
+		graph.addEdge(toV("B"),toV("A"),9);
+		graph.addEdge(toV("B"),toV("C"),4);
+		graph.addEdge(toV("B"),toV("D"),8);
+		Iterator<EdgeEntry<V, Integer>> it = graph.iterator();
+		while (it.hasNext()) {
+			it.next();
+			it.remove();
+		}
+		assertEquals(0, graph.getEdgeCollection().size());
 	}
 }

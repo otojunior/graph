@@ -170,6 +170,8 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 			 */
 			public EdgeEntry<V, E> next() {
 				EdgeEntry<V, E> element = iteratorEdge.next();
+				currentVi = element.getVi();
+				currentVj = element.getVj();
 				return element;
 			}
 
