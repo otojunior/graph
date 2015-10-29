@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.otojunior.graph.EdgeEntry;
 import org.otojunior.graph.Graph;
-import org.otojunior.graph.memory.digraph.HashDigraph;
+import org.otojunior.graph.memory.HashDigraph;
 
 public class GraphUtilTest {
 	private Graph<String, Integer> graph;

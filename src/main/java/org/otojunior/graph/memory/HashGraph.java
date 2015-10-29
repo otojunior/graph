@@ -1,4 +1,4 @@
-package org.otojunior.graph.memory.defgraph;
+package org.otojunior.graph.memory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Map;
  * Hash Non-Directinal Graph.
  * @author Oto Junior
  */
-public class HashDefGraph<V, E> extends AbstractDefGraph<V, E> {
+public class HashGraph<V, E> extends AbstractGraph<V, E> {
 	/**
 	 * 
 	 */
@@ -16,7 +16,7 @@ public class HashDefGraph<V, E> extends AbstractDefGraph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
-	public HashDefGraph() {
+	public HashGraph() {
 		graph = new HashMap<V,Map<V,E>>();
 	}
 	

@@ -1,4 +1,4 @@
-package org.otojunior.graph.memory.digraph;
+package org.otojunior.graph.memory;
 
 import java.util.HashMap;
 import java.util.Map;

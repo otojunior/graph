@@ -1,7 +1,7 @@
-package org.otojunior.graph.memory.digraph;
+package org.otojunior.graph.memory;
 
 import org.otojunior.graph.DigraphsTestCase;
-import org.otojunior.graph.memory.digraph.HashDigraph;
+import org.otojunior.graph.memory.HashDigraph;
 
 /**
  * Hash Digraph test.

@@ -1,13 +1,10 @@
-package org.otojunior.graph.database.digraph;
-
-import org.otojunior.graph.database.AbstractDbGraph;
-
+package org.otojunior.graph.database;
 
 /**
  * Abstract class of directional graphs.
  * @author Oto Junior
  */
-public abstract class AbstractDbDigraph<V, E> extends AbstractDbGraph<V, E> {
+public abstract class AbstractDbDigraph<V, E> extends AbstractDbBaseGraph<V, E> {
 	/**
 	 * 
 	 */

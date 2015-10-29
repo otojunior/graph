@@ -12,7 +12,7 @@ import org.junit.Test;
  *
  * @param <V> Vertex.
  */
-public abstract class DefGraphsTestCase<V> extends DigraphsTestCase<V> {
+public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 	/**
 	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#addEdge(java.lang.Object, java.lang.Object, java.lang.Object)}.
 	 */

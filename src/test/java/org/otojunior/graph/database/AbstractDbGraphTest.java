@@ -1,8 +1,16 @@
-package org.otojunior.graph.database.digraph;
+/**
+ * 
+ */
+package org.otojunior.graph.database;
 
-import org.otojunior.graph.DigraphsTestCase;
+import org.otojunior.graph.GraphsTestCase;
+import org.otojunior.graph.database.AbstractDbGraph;
 
-public class AbstractDbDigraphTest extends DigraphsTestCase<String> {
+/**
+ * @author 01456231650
+ *
+ */
+public class AbstractDbGraphTest extends GraphsTestCase<String> {
 	/**
 	 * {@inheritDoc}
 	 */
@@ -13,12 +21,12 @@ public class AbstractDbDigraphTest extends DigraphsTestCase<String> {
 		String user = "sa";
 		String password = "sa";
 		
-		graph = new AbstractDbDigraph<String, Integer>(driver, url, user, password) {
+		graph = new AbstractDbGraph<String, Integer>(driver, url, user, password) {
 			/**
 			 * 
 			 */
-			private static final long serialVersionUID = 8144887334682388971L;
-			
+			private static final long serialVersionUID = 220823437973060133L;
+
 			/**
 			 * {@inheritDoc}
 			 */
@@ -35,6 +43,7 @@ public class AbstractDbDigraphTest extends DigraphsTestCase<String> {
 				return "INTEGER";
 			}
 		};
+		
 	}
 
 	/**

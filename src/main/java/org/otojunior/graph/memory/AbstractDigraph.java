@@ -1,6 +1,4 @@
-package org.otojunior.graph.memory.digraph;
-
-import org.otojunior.graph.memory.AbstractMemoryGraph;
+package org.otojunior.graph.memory;
 
 /**
  * Abstract Class of graphs.

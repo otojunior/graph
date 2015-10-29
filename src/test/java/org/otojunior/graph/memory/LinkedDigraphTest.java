@@ -1,7 +1,7 @@
-package org.otojunior.graph.memory.digraph;
+package org.otojunior.graph.memory;
 
 import org.otojunior.graph.DigraphsTestCase;
-import org.otojunior.graph.memory.digraph.LinkedDigraph;
+import org.otojunior.graph.memory.LinkedDigraph;
 
 /**
  * Linked Digraphs Test Case.
