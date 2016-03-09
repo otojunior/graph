@@ -1,5 +1,7 @@
 package org.otojunior.graph.database;
 
+import java.sql.SQLException;
+
 /**
  * 
  * @author Oto
@@ -19,8 +21,12 @@ public abstract class AbstractDbGraph<V, E> extends AbstractDbBaseGraph<V, E> {
 	 * @param url
 	 * @param user
 	 * @param password
+	 * @throws SQLException 
+	 * @throws ClassNotFoundException 
 	 */
-	public AbstractDbGraph(String driver, String url, String user, String password) {
+	public AbstractDbGraph(String driver, String url, String user, String password) throws 
+			ClassNotFoundException, 
+			SQLException {
 		super(driver, url, user, password);
 	}
 

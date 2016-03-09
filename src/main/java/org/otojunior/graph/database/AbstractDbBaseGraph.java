@@ -18,7 +18,7 @@ import org.otojunior.graph.util.sql.Sql;
 
 /**
  * Abstract class of directional graphs.
- * @author Oto
+ * @author Oto Junior
  */
 public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
@@ -40,23 +40,23 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	 * @param url String of connection
 	 * @param user User
 	 * @param password Password
+	 * @throws ClassNotFoundException 
+	 * @throws SQLException 
 	 */
-	public AbstractDbBaseGraph(String driver, String url, String user, String password) {
-		try {
-			Class.forName(driver);
-			this.conn = DriverManager.getConnection(url, user, password);
-			this.conn.setAutoCommit(true);
-			
-			this.run = new QueryRunner();
-			this.tableName = generateTableName();
-			this.sql = new Sql(this.tableName);
-			this.vertexCollectionHandler = createVertexCollectionHandler();
-			this.edgeCollectionHandler = createEdgeCollectionHandler();
-			
-			createTable();
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		} 
+	public AbstractDbBaseGraph(String driver, String url, String user, String password) throws 
+			ClassNotFoundException, 
+			SQLException {
+		Class.forName(driver);
+		this.conn = DriverManager.getConnection(url, user, password);
+		this.conn.setAutoCommit(true);
+		
+		this.run = new QueryRunner();
+		this.tableName = generateTableName();
+		this.sql = new Sql(this.tableName);
+		this.vertexCollectionHandler = createVertexCollectionHandler();
+		this.edgeCollectionHandler = createEdgeCollectionHandler();
+		
+		createTable();
 	}
 
 	/**
@@ -76,6 +76,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void addEdge(V vi, V vj, E e) {
 		try {
 			if (!hasEdge(vi, vj)) {
@@ -93,6 +94,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void addVertex(V v) {
 		try {
 			if (!hasVertex(v)) {
@@ -106,6 +108,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public E getEdge(V vi, V vj) {
 		try {
 			E edge = run.query(conn, sql.SELECT_EDGE, new ScalarHandler<E>(), vi, vj);
@@ -118,6 +121,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<EdgeEntry<V, E>> getEdgeCollection() {
 		try {
 			Collection<EdgeEntry<V, E>> edges = 
@@ -131,6 +135,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<V> getVertexCollection() {
 		try {
 			Collection<V> vertexes = 
@@ -144,6 +149,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean hasEdge(V vi, V vj) {
 		return getEdge(vi, vj) != null;
 	}
@@ -151,6 +157,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Iterator<EdgeEntry<V, E>> iterator() {
 		return new Iterator<EdgeEntry<V, E>>() {
 			final Iterator<EdgeEntry<V, E>> iteratorEdge = 
@@ -187,6 +194,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public E removeEdge(V vi, V vj) {
 		try {
 			E edge = getEdge(vi, vj);
@@ -202,6 +210,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void removeVertex(V v) {
 		try {
 			String[] sqls = new String[] {
@@ -218,6 +227,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public int size() {
 		try {
 			Number size = run.query(conn, sql.SELECT_COUNT_VERTEX, new ScalarHandler<Number>());
@@ -303,14 +313,14 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Get the SQL type for edge.
+	 * @return The SQL type for edge.
 	 */
 	protected abstract String getSQLTypeForEdge();
 	
 	/**
-	 * o
-	 * @return
+	 * Get the SQL type for vertex.
+	 * @return The SQL type for vertex.
 	 */
 	protected abstract String getSQLTypeForVertex();
 }

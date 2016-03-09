@@ -2,6 +2,7 @@ package org.otojunior.graph;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Iterator;
@@ -33,7 +34,7 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 	 * Test method addEdge() for a repeated edge.
 	 */
 	@Test
-	public void testRepeatedEdge() {
+	public void testAddRepeatedEdge() {
 		graph.addEdge(toV("A"),toV("B"),2);
 		graph.addEdge(toV("B"),toV("A"),9);
 		graph.addEdge(toV("B"),toV("C"),5);
@@ -41,6 +42,36 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 		graph.addEdge(toV("B"),toV("D"),3);
 		assertEquals(4, graph.getEdgeCollection().size());
 		assertEquals(9, graph.getEdge(toV("A"),toV("B")).intValue());
+	}
+	
+	/**
+	 * Test method addEdge() for a repeated edge.
+	 */
+	@Test
+	public void testAddRepeatedEdge2() {
+		graph.addEdge(toV("A"),toV("B"),2);
+		graph.addEdge(toV("A"),toV("B"),1);
+		graph.addEdge(toV("B"),toV("A"),9);
+		graph.addEdge(toV("B"),toV("C"),5);
+		graph.addEdge(toV("C"),toV("A"),7);
+		graph.addEdge(toV("B"),toV("D"),3);
+		assertEquals(4, graph.getEdgeCollection().size());
+		assertEquals(9, graph.getEdge(toV("A"),toV("B")).intValue());
+	}
+	
+	/**
+	 * Test method addEdge() for a repeated edge.
+	 */
+	@Test
+	public void testUpdateEdge() {
+		graph.addEdge(toV("A"),toV("B"),2);
+		graph.addEdge(toV("B"),toV("A"),9);
+		graph.addEdge(toV("B"),toV("A"),1);
+		graph.addEdge(toV("B"),toV("C"),5);
+		graph.addEdge(toV("C"),toV("A"),7);
+		graph.addEdge(toV("B"),toV("D"),3);
+		assertEquals(4, graph.getEdgeCollection().size());
+		assertEquals(1, graph.getEdge(toV("A"),toV("B")).intValue());
 	}
 	
 	/**
@@ -114,5 +145,43 @@ public abstract class GraphsTestCase<V> extends DigraphsTestCase<V> {
 			it.remove();
 		}
 		assertEquals(0, graph.getEdgeCollection().size());
+	}
+	
+	/**
+	 * Test method removeEdge().
+	 */
+	@Test
+	public void testRemoveEdge() {
+		graph.addEdge(toV("A"),toV("B"),2);
+		graph.addEdge(toV("B"),toV("D"),3);
+		assertEquals(2, graph.getEdgeCollection().size());
+		graph.removeEdge(toV("B"), toV("D"));
+		assertEquals(1, graph.getEdgeCollection().size());
+		assertNull(graph.getEdge(toV("D"), toV("B")));
+		assertNull(graph.getEdge(toV("B"), toV("D")));
+	}
+	
+	/**
+	 * Test method removeEdge() on empty graph.
+	 */
+	@Test
+	public void testRemoveEdgeEmptyGraph() {
+		graph.removeEdge(toV("A"), toV("B"));
+		assertNull(graph.getEdge(toV("A"), toV("B")));
+	}
+	
+	/**
+	 * Test method removeEdge().
+	 */
+	@Test
+	public void testRepeatedRemoveEdge() {
+		graph.addEdge(toV("A"),toV("B"),2);
+		graph.addEdge(toV("B"),toV("D"),3);
+		assertEquals(2, graph.getEdgeCollection().size());
+		graph.removeEdge(toV("B"), toV("D"));
+		graph.removeEdge(toV("B"), toV("D"));
+		assertEquals(1, graph.getEdgeCollection().size());
+		assertNull(graph.getEdge(toV("D"), toV("B")));
+		assertNull(graph.getEdge(toV("B"), toV("D")));
 	}
 }

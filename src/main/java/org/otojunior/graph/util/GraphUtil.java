@@ -11,6 +11,16 @@ import org.otojunior.graph.Graph;
  */
 public class GraphUtil {
 	/**
+	 * Default Constructor. 
+	 */
+	private GraphUtil() { 
+		/*
+		 * Empty constructor indicates a utility class.
+		 * Not instantiable.
+		 */
+	}
+	
+	/**
 	 * Obtain the maximal valued edge.
 	 * @param <V> The Vertex Class.
 	 * @param <E> The Edge Class.

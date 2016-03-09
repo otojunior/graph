@@ -110,7 +110,7 @@ public abstract class DigraphsTestCase<V> {
 	}
 
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.HashDigraph#removeEdge(java.lang.Object, java.lang.Object)}.
+	 * Test method removeEdge().
 	 */
 	@Test
 	public void testRemoveEdge() {
@@ -121,6 +121,15 @@ public abstract class DigraphsTestCase<V> {
 		assertEquals(1, graph.getEdgeCollection().size());
 		assertNull(graph.getEdge(toV("D"), toV("B")));
 		assertNull(graph.getEdge(toV("B"), toV("D")));
+	}
+	
+	/**
+	 * Test method removeEdge() on empty graph.
+	 */
+	@Test
+	public void testRemoveEdgeEmptyGraph() {
+		graph.removeEdge(toV("A"), toV("B"));
+		assertNull(graph.getEdge(toV("A"), toV("B")));
 	}
 
 	/**
@@ -174,7 +183,7 @@ public abstract class DigraphsTestCase<V> {
 	}
 	
 	/**
-	 * Test method for {@link graph.memory.digraph.impl.LinkedDigraph#hasEdge()}.
+	 * Test method hasEdge().
 	 */
 	@Test
 	public void testHasEdge() {
@@ -185,6 +194,14 @@ public abstract class DigraphsTestCase<V> {
 		assertTrue(graph.hasEdge(toV("B"), toV("C")));
 		assertTrue(graph.hasEdge(toV("B"), toV("D")));
 		assertFalse(graph.hasEdge(toV("D"), toV("B")));
+	}
+	
+	/**
+	 * Test method hasEdge() where not has Edge.
+	 */
+	@Test
+	public void testNotHasEdge() {
+		assertFalse(graph.hasEdge(toV("A"), toV("B")));
 	}
 	
 	/**
