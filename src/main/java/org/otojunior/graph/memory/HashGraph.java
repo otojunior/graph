@@ -5,7 +5,9 @@ import java.util.Map;
 
 /**
  * Hash Non-Directinal Graph.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public class HashGraph<V, E> extends AbstractGraph<V, E> {
 	/**
@@ -22,6 +24,8 @@ public class HashGraph<V, E> extends AbstractGraph<V, E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param v a V object.
 	 */
 	public void addVertex(V v) {
 		graph.put(v, new HashMap<V,E>());

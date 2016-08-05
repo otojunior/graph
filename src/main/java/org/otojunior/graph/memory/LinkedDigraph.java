@@ -5,7 +5,9 @@ import java.util.Map;
 
 /**
  * Linked Directional Graph.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public class LinkedDigraph<V, E> extends AbstractDigraph<V, E> {
 	/**
@@ -22,6 +24,8 @@ public class LinkedDigraph<V, E> extends AbstractDigraph<V, E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param v a V object.
 	 */
 	public void addVertex(V v) {
 		graph.put(v, new LinkedHashMap<V,E>());

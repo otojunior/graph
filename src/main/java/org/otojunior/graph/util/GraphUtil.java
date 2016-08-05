@@ -7,7 +7,9 @@ import org.otojunior.graph.Graph;
 
 /**
  * Graphic Utilities.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public class GraphUtil {
 	/**
@@ -22,8 +24,8 @@ public class GraphUtil {
 	
 	/**
 	 * Obtain the maximal valued edge.
+	 *
 	 * @param <V> The Vertex Class.
-	 * @param <E> The Edge Class.
 	 * @param graph The Graph to be searched.
 	 * @return an Edge Entry.
 	 */
@@ -42,8 +44,8 @@ public class GraphUtil {
 	
 	/**
 	 * Obtain the minimal valued edge.
+	 *
 	 * @param <V> The Vertex Class.
-	 * @param <E> The Edge Class.
 	 * @param graph The Graph to be searched.
 	 * @return an Edge Entry.
 	 */

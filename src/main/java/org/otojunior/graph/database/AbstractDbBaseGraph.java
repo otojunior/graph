@@ -18,7 +18,9 @@ import org.otojunior.graph.util.sql.Sql;
 
 /**
  * Abstract class of directional graphs.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	/**
@@ -36,12 +38,13 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 
 	/**
 	 * Default constructor.
+	 *
 	 * @param driver JDBC driver.
 	 * @param url String of connection
 	 * @param user User
 	 * @param password Password
-	 * @throws ClassNotFoundException 
-	 * @throws SQLException 
+	 * @throws java.lang.ClassNotFoundException if any.
+	 * @throws java.sql.SQLException if any.
 	 */
 	public AbstractDbBaseGraph(String driver, String url, String user, String password) throws 
 			ClassNotFoundException, 
@@ -60,22 +63,24 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	}
 
 	/**
-	 * @return
+	 * <p>createEdgeCollectionHandler.</p>
+	 *
+	 * @return a {@link org.apache.commons.dbutils.ResultSetHandler} object.
 	 */
 	protected ResultSetHandler<Collection<EdgeEntry<V, E>>> createEdgeCollectionHandler() {
 		return new EdgeCollectionHandler<V, E>();
 	}
 
 	/**
-	 * @return
+	 * <p>createVertexCollectionHandler.</p>
+	 *
+	 * @return a {@link org.apache.commons.dbutils.ResultSetHandler} object.
 	 */
 	protected ResultSetHandler<Collection<V>> createVertexCollectionHandler() {
 		return new VertexCollectionHandler<V>();
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public void addEdge(V vi, V vj, E e) {
 		try {
@@ -91,9 +96,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public void addVertex(V v) {
 		try {
@@ -105,9 +108,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public E getEdge(V vi, V vj) {
 		try {
@@ -118,9 +119,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public Collection<EdgeEntry<V, E>> getEdgeCollection() {
 		try {
@@ -132,9 +131,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public Collection<V> getVertexCollection() {
 		try {
@@ -146,17 +143,13 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		}
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public boolean hasEdge(V vi, V vj) {
 		return getEdge(vi, vj) != null;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public Iterator<EdgeEntry<V, E>> iterator() {
 		return new Iterator<EdgeEntry<V, E>>() {
@@ -191,9 +184,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public E removeEdge(V vi, V vj) {
 		try {
@@ -207,9 +198,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public void removeVertex(V v) {
 		try {
@@ -224,9 +213,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public int size() {
 		try {
@@ -272,9 +259,7 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 		return (n.intValue() != 0);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	protected void finalize() throws Throwable {
 		run.update(conn, "drop table vertex_"+tableName);
@@ -283,8 +268,9 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * <p>getSqlCreateTableEdge.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
 	 */
 	protected String getSqlCreateTableEdge() {
 		return String.format( 
@@ -300,8 +286,9 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * <p>getSqlCreateTableVertex.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
 	 */
 	protected String getSqlCreateTableVertex() {
 		return String.format( 
@@ -314,12 +301,14 @@ public abstract class AbstractDbBaseGraph<V, E> implements Graph<V, E> {
 
 	/**
 	 * Get the SQL type for edge.
+	 *
 	 * @return The SQL type for edge.
 	 */
 	protected abstract String getSQLTypeForEdge();
 	
 	/**
 	 * Get the SQL type for vertex.
+	 *
 	 * @return The SQL type for vertex.
 	 */
 	protected abstract String getSQLTypeForVertex();

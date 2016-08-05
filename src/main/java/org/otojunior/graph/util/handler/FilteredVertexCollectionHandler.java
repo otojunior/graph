@@ -11,13 +11,16 @@ import org.apache.commons.dbutils.ResultSetHandler;
 
 /**
  * Vertex collection handler for use in Databases graphs.
- * @author Oto Junior
  *
+ * @author Oto Junior
  * @param <V> Vertex
+ * @version $Id: $Id
  */
 public class FilteredVertexCollectionHandler<V> implements ResultSetHandler<Collection<V>> {
 	/**
-	 * Handles the ResultSet. 
+	 * {@inheritDoc}
+	 *
+	 * Handles the ResultSet.
 	 */
 	public Collection<V> handle(ResultSet rs) throws SQLException {
 		Collection<V> vertexes = new HashSet<V>();

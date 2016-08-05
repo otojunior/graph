@@ -13,7 +13,9 @@ import org.otojunior.graph.SimpleEdgeEntry;
 
 /**
  * Abstract Class of graphs.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 	/**
@@ -28,6 +30,10 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @param e a E object.
 	 */
 	public void addEdge(V vi, V vj, E e) {
 		if (!graph.containsKey(vi))
@@ -41,11 +47,17 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param v a V object.
 	 */
 	public abstract void addVertex(V v);
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a E object.
 	 */
 	public E getEdge(V vi, V vj) {
 		if (graph.containsKey(vi)) {
@@ -59,6 +71,8 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @return a {@link java.util.Collection} object.
 	 */
 	public Collection<EdgeEntry<V, E>> getEdgeCollection() {
 		Collection<EdgeEntry<V, E>> edges = new ArrayList<EdgeEntry<V, E>>();
@@ -81,6 +95,8 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @return a {@link java.util.Collection} object.
 	 */
 	public Collection<V> getVertexCollection() {
 		return graph.keySet();
@@ -88,6 +104,10 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a boolean.
 	 */
 	public boolean hasEdge(V vi, V vj) {
 		if (graph.containsKey(vi)) {
@@ -101,6 +121,10 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a E object.
 	 */
 	public E removeEdge(V vi, V vj) {
 		E edge = null;
@@ -116,6 +140,8 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param v a V object.
 	 */
 	public void removeVertex(V v) {
 		graph.remove(v);
@@ -126,6 +152,8 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @return a int.
 	 */
 	public int size() {
 		return graph.size();
@@ -133,6 +161,8 @@ public abstract class AbstractMemoryGraph<V,E> implements Graph<V,E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @return a {@link java.util.Iterator} object.
 	 */
 	public Iterator<EdgeEntry<V, E>> iterator() {
 		return new Iterator<EdgeEntry<V, E>>() {

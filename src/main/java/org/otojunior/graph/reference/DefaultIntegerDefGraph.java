@@ -4,10 +4,11 @@ import org.otojunior.graph.memory.HashGraph;
 
 /**
  * Default Graph with integer vertexes and double value edges.
- * @author Oto Junior
  *
+ * @author Oto Junior
  * @param <V> Vertexes.
  * @param <E> Edges.
+ * @version $Id: $Id
  */
 public class DefaultIntegerDefGraph extends HashGraph<Integer, Double> {
 	/**

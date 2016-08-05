@@ -2,8 +2,9 @@ package org.otojunior.graph.util.sql;
 
 /**
  * SQL to manipulate database graphs.
- * @author Oto Junior
  *
+ * @author Oto Junior
+ * @version $Id: $Id
  */
 public class Sql {
 	public final String INSERT_VERTEX;
@@ -20,6 +21,11 @@ public class Sql {
 	public final String SELECT_COUNT_VERTEX;
 	public final String SELECT_COUNT_VERTEX_VI;
 	
+	/**
+	 * <p>Constructor for Sql.</p>
+	 *
+	 * @param table a {@link java.lang.String} object.
+	 */
 	public Sql(String table) {
 		INSERT_VERTEX = 
 			String.format("insert into vertex_%s (vi) values (?)", table);

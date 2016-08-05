@@ -1,9 +1,11 @@
 package org.otojunior.graph;
 
 /**
- * Internal class that represents a Edge with the origin and destiny 
- * vertexes. 
+ * Internal class that represents a Edge with the origin and destiny
+ * vertexes.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 	private static final long serialVersionUID = 8749235506878058451L;
@@ -14,6 +16,7 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 	
 	/**
 	 * Default constructor.
+	 *
 	 * @param vi Origin vertex.
 	 * @param vj Destiny vertex.
 	 * @param edge A edge value.
@@ -24,9 +27,7 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 		this.edge = edge;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean equals(Object obj) {
@@ -37,6 +38,8 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @return a E object.
 	 */
 	public E getEdge() {
 		return this.edge;
@@ -44,6 +47,8 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @return a V object.
 	 */
 	public V getVi() {
 		return this.vi;
@@ -51,14 +56,14 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @return a V object.
 	 */
 	public V getVj() {
 		return this.vj;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -71,6 +76,9 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param newValue a E object.
+	 * @return a E object.
 	 */
 	public E setEdge(E newValue) {
 		E oldValue = this.edge;
@@ -78,9 +86,7 @@ public class SimpleEdgeEntry<V,E> implements EdgeEntry<V,E> {
 		return oldValue;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	/** {@inheritDoc} */
 	@Override
 	public String toString() {
 		return String.format("SimpleEdgeEntry [vi=%s, vj=%s, edge=%s]", vi,

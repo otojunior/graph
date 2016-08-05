@@ -2,7 +2,9 @@ package org.otojunior.graph.memory;
 
 /**
  * Abstract Class of graphs.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public abstract class AbstractDigraph<V,E> extends AbstractMemoryGraph<V,E> {
 	/**

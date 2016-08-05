@@ -3,11 +3,12 @@ package org.otojunior.graph.database;
 import java.sql.SQLException;
 
 /**
- * 
- * @author Oto
+ * <p>Abstract AbstractDbGraph class.</p>
  *
+ * @author Oto
  * @param <V>
  * @param <E>
+ * @version $Id: $Id
  */
 public abstract class AbstractDbGraph<V, E> extends AbstractDbBaseGraph<V, E> {
 	/**
@@ -17,12 +18,13 @@ public abstract class AbstractDbGraph<V, E> extends AbstractDbBaseGraph<V, E> {
 
 	/**
 	 * Default constructor.
-	 * @param driver
-	 * @param url
-	 * @param user
-	 * @param password
-	 * @throws SQLException 
-	 * @throws ClassNotFoundException 
+	 *
+	 * @param driver a {@link java.lang.String} object.
+	 * @param url a {@link java.lang.String} object.
+	 * @param user a {@link java.lang.String} object.
+	 * @param password a {@link java.lang.String} object.
+	 * @throws java.sql.SQLException if any.
+	 * @throws java.lang.ClassNotFoundException if any.
 	 */
 	public AbstractDbGraph(String driver, String url, String user, String password) throws 
 			ClassNotFoundException, 
@@ -32,6 +34,10 @@ public abstract class AbstractDbGraph<V, E> extends AbstractDbBaseGraph<V, E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @param e a E object.
 	 */
 	public void addEdge(V vi, V vj, E e) {
 		E edge = super.getEdge(vi, vj);
@@ -46,6 +52,10 @@ public abstract class AbstractDbGraph<V, E> extends AbstractDbBaseGraph<V, E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a E object.
 	 */
 	public E getEdge(V vi, V vj) {
 		E edge = super.getEdge(vi, vj);
@@ -56,6 +66,10 @@ public abstract class AbstractDbGraph<V, E> extends AbstractDbBaseGraph<V, E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a boolean.
 	 */
 	public boolean hasEdge(V vi, V vj) {
 		boolean edge = super.hasEdge(vi, vj);
@@ -66,6 +80,10 @@ public abstract class AbstractDbGraph<V, E> extends AbstractDbBaseGraph<V, E> {
 	
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a E object.
 	 */
 	public E removeEdge(V vi, V vj) {
 		E edge = super.removeEdge(vi, vj);

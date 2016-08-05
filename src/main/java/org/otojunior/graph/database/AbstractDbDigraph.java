@@ -4,7 +4,9 @@ import java.sql.SQLException;
 
 /**
  * Abstract class of directional graphs.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public abstract class AbstractDbDigraph<V, E> extends AbstractDbBaseGraph<V, E> {
 	/**
@@ -14,12 +16,13 @@ public abstract class AbstractDbDigraph<V, E> extends AbstractDbBaseGraph<V, E> 
 
 	/**
 	 * Default constructor.
-	 * @param driver
-	 * @param url
-	 * @param user
-	 * @param password
-	 * @throws SQLException 
-	 * @throws ClassNotFoundException 
+	 *
+	 * @param driver a {@link java.lang.String} object.
+	 * @param url a {@link java.lang.String} object.
+	 * @param user a {@link java.lang.String} object.
+	 * @param password a {@link java.lang.String} object.
+	 * @throws java.sql.SQLException if any.
+	 * @throws java.lang.ClassNotFoundException if any.
 	 */
 	public AbstractDbDigraph(String driver, String url, String user, String password) throws 
 			ClassNotFoundException, 

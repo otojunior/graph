@@ -2,7 +2,9 @@ package org.otojunior.graph.memory;
 
 /**
  * Abstract Class of non directional graphs.
+ *
  * @author Oto Junior
+ * @version $Id: $Id
  */
 public abstract class AbstractGraph<V, E> extends AbstractMemoryGraph<V, E> {
 	/**
@@ -12,6 +14,10 @@ public abstract class AbstractGraph<V, E> extends AbstractMemoryGraph<V, E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @param e a E object.
 	 */
 	public void addEdge(V vi, V vj, E e) {
 		E edge = super.getEdge(vi, vj);
@@ -26,6 +32,10 @@ public abstract class AbstractGraph<V, E> extends AbstractMemoryGraph<V, E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a E object.
 	 */
 	public E getEdge(V vi, V vj) {
 		E edge = super.getEdge(vi, vj);
@@ -36,6 +46,10 @@ public abstract class AbstractGraph<V, E> extends AbstractMemoryGraph<V, E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a boolean.
 	 */
 	public boolean hasEdge(V vi, V vj) {
 		boolean edge = super.hasEdge(vi, vj);
@@ -46,6 +60,10 @@ public abstract class AbstractGraph<V, E> extends AbstractMemoryGraph<V, E> {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @param vi a V object.
+	 * @param vj a V object.
+	 * @return a E object.
 	 */
 	public E removeEdge(V vi, V vj) {
 		E edge = super.removeEdge(vi, vj);
